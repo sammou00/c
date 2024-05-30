@@ -3,6 +3,8 @@
         "Alignas",
         "Alignof",
         "ctype",
+        "fgets",
+        "getchar",
         "isalpha",
         "isdigit",
         "Noreturn",
