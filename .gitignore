@@ -1,0 +1,102 @@
+# Ignore object files and static libraries.
+*.o
+*.a
+*.lo
+*.la
+
+# Ignore dynamic libraries.
+*.so
+*.dylib
+*.dll
+
+# Ignore compiled binary files.
+*.exe
+*.out
+*.app
+
+# Ignore debugging files.
+*.dSYM/
+*.stackdump
+*.core
+
+# Ignore build directories.
+build/
+Build/
+bin/
+Bin/
+lib/
+Lib/
+
+# Ignore dependency files.
+*.d
+*.depend
+*.Plo
+
+# Ignore temporary and backup files.
+*~
+*.swp
+*.bak
+*.tmp
+*.temp
+*.log
+
+# Ignore IDE/editor specific files.
+# VSCode
+.vscode/
+
+# CLion
+.idea/
+cmake-build-*/
+
+# Xcode
+*.xcworkspace
+*.xcuserstate
+*.xcuserdatad/
+*.xccheckout
+*.xcodeproj/
+
+# Eclipse
+.cproject
+.project
+.settings/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Code::Blocks
+*.layout
+*.depend
+*.layout
+*.cbp
+
+# Ignore CMake generated files.
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# Ignore autotools generated files.
+*.in
+*.m4
+Makefile.in
+configure
+config.status
+config.log
+autom4te.cache/
+
+# Ignore Doxygen generated files.
+docs/
+
+# Ignore user-specific files.
+*.user
+*.suo
+*.userosscache
+*.userprefs
+
+# Ignore cscope files.
+cscope.*
+
+# Ignore mac specific files
+.DS_Store
