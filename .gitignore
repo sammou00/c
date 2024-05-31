@@ -3,7 +3,6 @@
 *.a
 *.lo
 *.la
-*
 # Ignore dynamic libraries.
 *.so
 *.dylib
