@@ -1,49 +1,49 @@
 #include <stdio.h>
 
 // Function prototypes
-void add();
-void subtract();
-void multiply();
-void divide();
 
+void add();
+void subtraction();
+void multiplication();
+void division();
+
+// Main function
 int main()
 {
     int choice;
-
     while (1)
     {
-        // Displaying the menu
-        printf("\nSimple Calculator\n");
-        printf("-------------------\n");
+        printf("Simple Calculator\n");
+        printf("-----------------\n");
         printf("1. Addition\n");
         printf("2. Subtraction\n");
         printf("3. Multiplication\n");
         printf("4. Division\n");
-        printf("5. Exit\n");
-        printf("Enter your choice: ");
+        printf("5. Exit...\n");
+        printf("-----------------\n");
+        printf("Enter your choice\n");
         scanf("%d", &choice);
 
-        // Performing the chosen operation
         switch (choice)
         {
         case 1:
             add();
             break;
         case 2:
-            subtract();
+            subtraction();
             break;
         case 3:
-            multiply();
+            multiplication();
             break;
         case 4:
-            divide();
+            division();
             break;
         case 5:
             printf("Exiting...\n");
-            printf("Thank you for using the calculator.\n");
+            printf("Thank you for using the calculator\n");
             return 0;
         default:
-            printf("Invalid choice. Please try again.\n");
+            printf("Invalid choice\n");
         }
     }
 
@@ -51,47 +51,47 @@ int main()
 }
 
 // Function definitions
-
 void add()
 {
     float num1, num2, result;
-    printf("Enter two numbers: ");
+    printf("Enter two numbers : ");
     scanf("%f %f", &num1, &num2);
     result = num1 + num2;
-    printf("Result: %.2f\n", result);
+    printf("Addition of : %.2f and %.2f  numbers is : %.2f\n", num1, num2, result);
 }
 
-void subtract()
+void subtraction()
 {
     float num1, num2, result;
-    printf("Enter two numbers: ");
+    printf("Enter two numbers : ");
     scanf("%f %f", &num1, &num2);
     result = num1 - num2;
-    printf("Result: %.2f\n", result);
+    printf("Subtraction of :  %.2f from %.2f numbers is : %.2f\n", num1, num2, result);
 }
 
-void multiply()
+void multiplication()
 {
     float num1, num2, result;
-    printf("Enter two numbers: ");
+    printf("Enter two numbers : ");
     scanf("%f %f", &num1, &num2);
     result = num1 * num2;
-    printf("Result: %.2f\n", result);
+    printf("Multiplication of :  %.2f and %.2f numbers is : %.2f\n", num1, num2, result);
 }
 
-void divide()
+void division()
 {
     float num1, num2, result;
-    printf("Enter two numbers: ");
+    printf("Enter two numbers : ");
     scanf("%f %f", &num1, &num2);
-    if (num2 != 0)
+
+    if (num2 == 0)
     {
-        result = num1 / num2;
-        printf("Result: %.2f\n", result);
+        printf("Division by zero is not possible\n");
+        return;
     }
     else
     {
-        printf("Error: Division by zero is not allowed.\n");
-        return;
+        result = num1 / num2;
+        printf("Division of of :  %.2f by %.2f numbers is : %.2f\n", num1, num2, result);
     }
 }
