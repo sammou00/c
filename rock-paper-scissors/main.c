@@ -49,6 +49,7 @@ int main()
 void displayMenu()
 {
     printf("Rock, Paper, Scissors Game\n");
+    printf("---------------------------\n");
     printf("1. Rock\n");
     printf("2. Paper\n");
     printf("3. Scissors\n");
