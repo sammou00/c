@@ -410,7 +410,7 @@ A program that simulates a Turing machine. This project involves complex logic a
 
 ---
 
-If you need to use `cs50` library,
+If you need to use [cs50 library](https://cs50.readthedocs.io/libraries/cs50/c/),
 
 1.create a file `Makefile` in the project folder and add
 
