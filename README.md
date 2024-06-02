@@ -2,28 +2,6 @@
 
 This document outlines a series of C programming projects, ranging from beginner to advanced levels. Each project includes a brief description and a link to the main file.
 
-If you need to use `cs50` library,
-
-1.create a file `Makefile` in the project folder and add
-
-```bash
-CC= clang
-LDLIBS =-lcs50
-
-```
-
-2.then just run
-
-```bash
-make main
-```
-
-3.then run
-
-```bash
-./main
-```
-
 ## Beginner Projects
 
 ### 1. [Rock-Paper-Scissors](./rock-paper-scissors/main.c)
@@ -429,3 +407,25 @@ A program that implements a Trie data structure for efficient information retrie
 ### 100. [Turing Machine Simulator](./turing-machine-simulator/main.c)
 
 A program that simulates a Turing machine. This project involves complex logic and data structures.
+
+If you need to use `cs50` library,
+
+1.create a file `Makefile` in the project folder and add
+
+```bash
+CC= clang
+LDLIBS =-lcs50
+
+```
+
+2.then just run
+
+```bash
+make main
+```
+
+3.then run
+
+```bash
+./main
+```
