@@ -412,9 +412,9 @@ A program that simulates a Turing machine. This project involves complex logic a
 
 If you need to use [cs50 library](https://cs50.readthedocs.io/libraries/cs50/c/),
 
-1. Install `cs50`
+1.Install `cs50`
 
-2. create a file `Makefile` in the project folder and add
+2.Create a file `Makefile` in the project folder and add
 
 ```bash
 CC= clang
@@ -422,13 +422,13 @@ LDLIBS =-lcs50
 
 ```
 
-3. then just run
+3.Then just run
 
 ```bash
 make main
 ```
 
-4. then run
+4.Then run
 
 ```bash
 ./main
