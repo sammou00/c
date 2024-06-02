@@ -408,6 +408,8 @@ A program that implements a Trie data structure for efficient information retrie
 
 A program that simulates a Turing machine. This project involves complex logic and data structures.
 
+---
+
 If you need to use `cs50` library,
 
 1.create a file `Makefile` in the project folder and add
