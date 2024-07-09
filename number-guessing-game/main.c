@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <cs50.h>
 #include <stdlib.h>
+#include <cs50.h>
 #include <time.h>
 #include <ctype.h>
 
@@ -15,7 +15,7 @@ int main()
 {
     // Seed the random number generator
     srand(time(NULL));
-    do
+        do
     {
         playGame();
     } while (playAgain());
