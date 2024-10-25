@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <math.h>
 
-// Function prototypes
+// function prototypes
 void start();
 float getNumber();
 char getOperator();
