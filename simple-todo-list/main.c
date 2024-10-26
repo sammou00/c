@@ -9,7 +9,7 @@
 /*
 simple-todo-list
 -----------------
-A console-based to-do list application where users can add, view, and delete tasks.
+A console-based to-do list application where users can add, view, update and delete tasks.
 
 */
 
