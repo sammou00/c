@@ -1,18 +1,18 @@
-# Rectangle Calculator
+# Currency Converter
 
-A modular C project for calculating the perimeter and area of a rectangle using an organized folder structure and a `Makefile` for building and running the application.
+A modular C project for converting currencies using an organized folder structure and a `Makefile` for building and running the application.
 
 ## Project Structure
 
 The project is organized as follows:
 
 ```bash
-project/
+currency-converter/
 ├── src/ # Source code directory
-│  └── main.c # Main application file
-│  └── functions.c # Function implementations
+│   ├── main.c # Main application file
+│   ├── functions.c # Function implementations
 ├── include/ # Header files directory
-│  └── main.h # Function declarations
+│   └── main.h # Function declarations
 ├── build/ # Generated object files (created during compilation)
 ├── Makefile # Build automation script
 ├── README.md # Project documentation
@@ -41,7 +41,7 @@ project/
 
     ```bash
     git clone <repository-url>
-    cd project
+    cd currency-converter
     ```
 
 2. **Build the Project**:
@@ -62,7 +62,7 @@ project/
     ./main
     ```
 
-    The program will prompt you to input the height and width of a rectangle and output the calculated perimeter and area.
+    The program will prompt you to input the amount, source currency, and target currency. It then outputs the converted amount based on predefined exchange rates.
 
 4. **Clean the Project**:
    To remove the generated files (`build/` folder and the executable), run:
@@ -82,10 +82,10 @@ project/
 
 2. **Permission Issues**:
 
-    - Ensure you have execution permissions on the `main` file:
+    - Ensure you have execution permissions on the `converter` file:
 
     ```bash
-    chmod +x main
+    chmod +x converter
     ```
 
 3. **Missing Tools**:
@@ -96,5 +96,3 @@ project/
 ## License
 
 This project is open-source. You can use, modify, and distribute it as per your needs.
-
----
