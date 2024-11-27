@@ -1,9 +1,10 @@
-#include "../include/main.h"
+#include "main.h"
 
 int main()
 {
-    // Define currency options
+    // define currency options
     Currency currencies[] = {
+        {"USD (US Dollar)", 1.00},
         {"EUR (Euro)", 0.94},
         {"GBP (British Pound)", 0.79},
         {"INR (Indian Rupee)", 83.03},
@@ -22,41 +23,50 @@ int main()
         {"KWD (Kuwaiti Dinar)", 0.30},
         {"BHD (Bahraini Dinar)", 0.38},
         {"OMR (Omani Rial)", 0.38},
-        {"JOD (Jordanian Dinar)", 0.71},
+        {"Gor (Georgian Lari)", 3.30},
         {"EGP (Egyptian Pound)", 15.70}};
     int size = sizeof(currencies) / sizeof(currencies[0]);
-    int choice;
-    double amount, convertedAmount;
+    int choice_from = 0;
+    int choice_to = 0;
+    double amount = 0, convertedAmount = 0;
+
+    // allocate memory for currency names
 
     printf("Welcome to the Currency Converter!\n");
 
     do
     {
-        // Show menu and get user choice
-        showMenu(currencies, size);
-        choice = getUserChoice(size + 1);
+        // show menu and get user choice
+        show_menu(currencies, size);
+        choice_from = get_user_to_choice(size + 1);
+        choice_to = get_user_from_choice(size + 1);
 
-        // Handle exit option
-        if (choice == size + 1)
+        // handle exit option
+        if (choice_from == size + 1 || choice_to == size + 1)
         {
             break;
         }
 
-        // Get the amount and validate it
-        printf("Enter the amount in USD: ");
-        while (scanf("%lf", &amount) != 1 || amount < 0)
+        // get the amount and validate it
+        do
         {
-            printf("Invalid amount. Please enter a positive number: ");
-            while (getchar() != '\n')
-                ;
-        }
+            printf("Enter the amount : ");
+            scanf("%lf", &amount);
+            if (amount <= 0)
+            {
+                printf("Invalid amount. Please enter a positive number.\n");
+            }
+        } while (amount <= 0);
 
-        // Perform conversion and display result
-        convertedAmount = convert_currency(amount, currencies[choice - 1].rate);
-        printf("\n%.2f USD is equal to %.2f %s.\n", amount, convertedAmount, currencies[choice - 1].name);
+        // convert from source to target currency
+        double rate = currencies[choice_to - 1].rate / currencies[choice_from - 1].rate;
+        convertedAmount = convert_currency(amount, rate);
 
+        // display the result
+        printf("%.2f  %s is  %.2f  %s\n", amount, currencies[choice_from - 1].name, convertedAmount, currencies[choice_to - 1].name);
     } while (do_continue());
 
-    printf("\nThank you for using the Currency Converter! Goodbye.\n");
+    printf("Thank you for using the Currency Converter!\n");
+
     return 0;
 }

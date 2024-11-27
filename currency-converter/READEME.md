@@ -10,7 +10,7 @@ The project is organized as follows:
 currency-converter/
 ├── src/ # Source code directory
 │   ├── main.c # Main application file
-│   ├── functions.c # Function implementations
+│   ├── converter.c # Function implementations
 ├── include/ # Header files directory
 │   └── main.h # Function declarations
 ├── build/ # Generated object files (created during compilation)
@@ -22,7 +22,7 @@ currency-converter/
 
 1. **Makefile**: Automates the build process, compiles the source code, and links object files to produce the executable.
 2. **README.md**: Provides documentation on the project, including structure and build instructions.
-3. **src/**: Contains the source code (`main.c` and `functions.c`) for the application.
+3. **src/**: Contains the source code (`main.c` and `converter.c`) for the application.
 4. **include/**: Contains the header file (`main.h`) with function prototypes.
 5. **build/**: This folder is created during the compilation process and stores intermediate object files (`.o`).
 
@@ -51,7 +51,7 @@ currency-converter/
     make
     ```
 
-    - This compiles `main.c` and `functions.c`.
+    - This compiles `main.c` and `converter.c`.
     - Object files are stored in the `build/` directory.
     - The executable is generated in the project root with the name `main`.
 
