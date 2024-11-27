@@ -48,7 +48,7 @@ int main()
         {
             printf("Invalid amount. Please enter a positive number: ");
             while (getchar() != '\n')
-                ; // Clear invalid input
+                ;
         }
 
         // Perform conversion and display result
