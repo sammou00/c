@@ -24,7 +24,7 @@ A program that converts temperatures between Celsius, Fahrenheit, and Kelvin. Th
 
 A console-based to-do list application where users can add, view, and delete tasks. This project introduces the basics of working with arrays and strings.
 
-### 6. [Currency Converter](./currency-converter/main.c)
+### 6. [Currency Converter](./currency-converter/src/main.c)
 
 A program that converts amounts between different currencies. This project helps practice arithmetic operations and user input.
 

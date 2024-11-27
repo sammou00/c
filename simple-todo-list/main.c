@@ -6,13 +6,6 @@
 #define MAX_TASKS 100  // maximum number of tasks
 #define MAX_LENGTH 100 // maximum length of each task
 
-/*
-simple-todo-list
------------------
-A console-based to-do list application where users can add, view, update and delete tasks.
-
-*/
-
 // global variables
 char todos[MAX_TASKS][MAX_LENGTH];
 int todo_count = 0;
