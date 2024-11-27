@@ -82,10 +82,10 @@ currency-converter/
 
 2. **Permission Issues**:
 
-    - Ensure you have execution permissions on the `converter` file:
+    - Ensure you have execution permissions on the `main` file:
 
     ```bash
-    chmod +x converter
+    chmod +x main
     ```
 
 3. **Missing Tools**:
