@@ -28,7 +28,8 @@ int main()
     int size = sizeof(currencies) / sizeof(currencies[0]);
     int choice_from = 0;
     int choice_to = 0;
-    double amount = 0, convertedAmount = 0;
+    double amount = 0;
+    double convertedAmount = 0;
 
     // allocate memory for currency names
 
@@ -49,6 +50,8 @@ int main()
             {
                 free(currencies_copy[i].name);
             }
+
+            free(currencies_copy);
 
             break;
         }
@@ -76,6 +79,8 @@ int main()
         {
             free(currencies_copy[i].name);
         }
+
+        free(currencies_copy);
 
     } while (do_continue());
 
