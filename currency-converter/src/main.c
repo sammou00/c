@@ -36,14 +36,20 @@ int main()
 
     do
     {
-        // show menu and get user choice
-        show_menu(currencies, size);
+        // show menu and get user choice_from and choice_to
+        Currency *currencies_copy = show_menu(currencies, size);
         choice_from = get_user_to_choice(size + 1);
         choice_to = get_user_from_choice(size + 1);
 
         // handle exit option
         if (choice_from == size + 1 || choice_to == size + 1)
         {
+            // free allocated memory
+            for (int i = 0; i < size; i++)
+            {
+                free(currencies_copy[i].name);
+            }
+
             break;
         }
 
@@ -64,6 +70,13 @@ int main()
 
         // display the result
         printf("%.2f  %s is  %.2f  %s\n", amount, currencies[choice_from - 1].name, convertedAmount, currencies[choice_to - 1].name);
+
+        // free allocated memory
+        for (int i = 0; i < size; i++)
+        {
+            free(currencies_copy[i].name);
+        }
+
     } while (do_continue());
 
     printf("Thank you for using the Currency Converter!\n");

@@ -1,14 +1,21 @@
 #include "main.h"
 
 // display the currency menu
-void show_menu(Currency currencies[], int size)
+Currency *show_menu(Currency currencies[], int size)
 {
+    Currency *currencies_copy = malloc(size * sizeof(Currency));
+
     printf("\nAvailable currencies:\n");
     for (int i = 0; i < size; i++)
     {
         printf("%d. %s (Rate: %.2f)\n", i + 1, currencies[i].name, currencies[i].rate);
+        currencies_copy[i].name = malloc(strlen(currencies[i].name) + 1);
+        strcpy(currencies_copy[i].name, currencies[i].name);
+        currencies_copy[i].rate = currencies[i].rate;
     }
     printf("%d. Exit\n", size + 1);
+
+    return currencies_copy;
 }
 
 // get the user's choice for the source currency
@@ -23,8 +30,6 @@ int get_user_to_choice(int max_option)
             break; // valid input
         }
         printf("Invalid choice. Please try again.\n");
-        while (getchar() != '\n')
-            ; // clear input buffer
     }
     return choice;
 }
@@ -41,8 +46,6 @@ int get_user_from_choice(int max_option)
             break; // valid input
         }
         printf("Invalid choice. Please try again.\n");
-        while (getchar() != '\n')
-            ; // clear input buffer
     }
     return choice;
 }

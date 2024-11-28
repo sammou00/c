@@ -2,11 +2,10 @@
 #define MAIN_H
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include <ctype.h>
-
-// maximum length for currency names (if dynamic allocation fails)
-#define MAX_NAME_LENGTH 50
 
 // struct for currency data
 typedef struct
@@ -21,8 +20,9 @@ typedef struct
  * displays the menu of available currencies to the user.
  * @param currencies Array of Currency structures.
  * @param size Number of currencies in the array.
+ * @return A copy of the Currency array with allocated memory for names.
  */
-void show_menu(Currency currencies[], int size);
+Currency *show_menu(Currency currencies[], int size);
 
 /**
  * prompts the user to select a source currency.
@@ -50,6 +50,6 @@ double convert_currency(double amount, double rate);
  * asks the user if they want to perform another conversion.
  * @return true if the user wants to continue, false otherwise.
  */
-bool do_continue();
+bool do_continue(void);
 
 #endif // MAIN_H
