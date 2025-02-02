@@ -1,76 +1,112 @@
 #include "main.h"
 
-// display the currency menu
-Currency *show_menu(Currency currencies[], int size)
+CurrencyNode *create_node(char *name, double rate)
 {
-    Currency *currencies_copy = malloc(size * sizeof(Currency));
-
-    printf("\nAvailable currencies:\n");
-    for (int i = 0; i < size; i++)
+    CurrencyNode *node = (CurrencyNode *)malloc(sizeof(CurrencyNode));
+    if (node == NULL)
     {
-        printf("%d. %s (Rate: %.2f)\n", i + 1, currencies[i].name, currencies[i].rate);
-        currencies_copy[i].name = malloc(strlen(currencies[i].name) + 1);
-        strcpy(currencies_copy[i].name, currencies[i].name);
-        currencies_copy[i].rate = currencies[i].rate;
+        printf("Memory allocation failed\n");
     }
-    printf("%d. Exit\n", size + 1);
+    // allocate memory for the name
+    node->name = (char *)malloc(strlen(name) + 1);
+    if (node->name == NULL)
+    {
+        printf("Memory allocation failed\n");
+    }
+    strcpy(node->name, name);
+    node->rate = rate;
+    node->next = NULL;
 
-    return currencies_copy;
+    return node;
 }
 
-// get the user's choice for the source currency
-int get_user_to_choice(int max_option)
+void add_currency(CurrencyNode **head, char *name, double rate)
 {
-    int choice = 0;
-    while (true)
+    CurrencyNode *new_node = create_node(name, rate);
+
+    if (*head == NULL)
     {
-        printf("Enter your From currency choice (1 to %d): ", max_option);
-        if (scanf("%d", &choice) == 1 && choice >= 1 && choice <= max_option)
+        *head = new_node;
+    }
+    else
+    {
+        CurrencyNode *current = *head;
+        while (current->next != NULL)
         {
-            break; // valid input
+            current = current->next;
         }
-        printf("Invalid choice. Please try again.\n");
+        current->next = new_node;
     }
-    return choice;
 }
 
-// get the user's choice for the source currency
+void show_menu(CurrencyNode *head)
+{
+    int index = 1;
+    CurrencyNode *current = head;
+    printf("\nAvailable currencies:\n");
+    while (current != NULL)
+    {
+        printf("%d. %s\n", index, current->name);
+        current = current->next;
+        index++;
+    }
+    printf("%d. Exit\n", index);
+}
+
 int get_user_from_choice(int max_option)
 {
-    int choice = 0;
-    while (true)
+    int choice;
+    printf("Enter the currency you want to convert from: ");
+    scanf("%d", &choice);
+    while (choice < 1 || choice > max_option)
     {
-        printf("Enter your To currency choice (1 to %d): ", max_option);
-        if (scanf("%d", &choice) == 1 && choice >= 1 && choice <= max_option)
-        {
-            break; // valid input
-        }
-        printf("Invalid choice. Please try again.\n");
+        printf("Invalid choice. Please try again: ");
+        scanf("%d", &choice);
     }
     return choice;
 }
 
-// perform currency conversion
+int get_user_to_choice(int max_option)
+{
+    int choice;
+    printf("Enter the currency you want to convert to: ");
+    scanf("%d", &choice);
+    while (choice < 1 || choice > max_option)
+    {
+        printf("Invalid choice. Please try again: ");
+        scanf("%d", &choice);
+    }
+    return choice;
+}
+
 double convert_currency(double amount, double rate)
 {
     return amount * rate;
 }
 
-// ask the user if they want to continue
-bool do_continue()
+void free_list(CurrencyNode *head)
 {
-    char response = '\0';
-    while (true)
+    CurrencyNode *temp;
+    while (head != NULL)
     {
-        printf("Do you want to convert another currency? (y/n): ");
-        if (scanf(" %c", &response) == 1)
-        {
-            response = tolower(response);
-            if (response == 'y' || response == 'n')
-            {
-                return response == 'y';
-            }
-        }
-        printf("Invalid input. Please enter 'y' or 'n'.\n");
+        temp = head;
+        head = head->next;
+        free(temp->name);
+        free(temp);
     }
+}
+
+bool do_continue(void)
+{
+    char choice;
+    printf("Do you want to convert another currency? (y/n): ");
+    scanf(" %c", &choice);
+
+    choice = tolower(choice);
+    while (choice != 'y' && choice != 'n')
+    {
+        printf("Invalid choice. Please try again: ");
+        scanf(" %c", &choice);
+    }
+    return choice == 'y';
 }

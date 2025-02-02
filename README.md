@@ -28,7 +28,7 @@ A console-based to-do list application where users can add, view, and delete tas
 
 A program that converts amounts between different currencies. This project helps practice arithmetic operations and user input.
 
-### 7. [Basic Voting System](./basic-voting-system/main.c)
+### 7. [Basic Voting System](./basic-voting-system/src/main.c)
 
 A simple voting system where users can vote for candidates and see the results. This project involves arrays and input/output handling.
 
@@ -44,7 +44,7 @@ A program that calculates the factorial of a given number. This project introduc
 
 A program that checks if a given number is prime. This project involves loops and conditionals.
 
-### 11. [Palindrome Checker](./palindrome-checker/main.c)
+### 11. [Palindrome Checker](./palindrome-checker/src/main.c)
 
 A program that checks if a given string or number is a palindrome. This project involves string handling and loops.
 
@@ -52,15 +52,15 @@ A program that checks if a given string or number is a palindrome. This project 
 
 A program that generates the Fibonacci sequence up to a specified number. This project introduces loops and recursion.
 
-### 13. [Basic Quiz](./basic-quiz/main.c)
+### 13. [Basic Quiz](./basic-quiz/src/main.c)
 
 A simple quiz application where users answer multiple-choice questions. This project covers arrays, strings, and input/output.
 
-### 14. [Simple Stopwatch](./simple-stopwatch/main.c)
+### 14. [Simple Stopwatch](./simple-stopwatch/src/main.c)
 
 A console-based stopwatch application. This project involves working with time functions and loops.
 
-### 15. [Basic Alarm Clock](./basic-alarm-clock/main.c)
+### 15. [Basic Alarm Clock](./basic-alarm-clock/src/main.c)
 
 A simple alarm clock that allows the user to set an alarm. This project involves working with time and input/output.
 
